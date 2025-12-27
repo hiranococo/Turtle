@@ -41,7 +41,7 @@ public class TurtleController : MonoBehaviour
     void Update()
     {
         timer -= Time.deltaTime;
-        Debug.Log("Timer: " + timer);
+        //Debug.Log("Timer: " + timer);
         if (timer <= 0f && groundedBehavior != GroundedBehavior.Turning &&physicsState == PhysicsState.Grounded)
         {
             SelectGroundBehavior();
@@ -57,12 +57,16 @@ public class TurtleController : MonoBehaviour
         {
             TurnAround();
         }
-        Debug.Log("Current Behavior: " + groundedBehavior);
-        Debug.Log("targetRotation: " + targetRotation.eulerAngles); 
+        //Debug.Log("Current Behavior: " + groundedBehavior);
+        //Debug.Log("targetRotation: " + targetRotation.eulerAngles); 
 
         if (followMouse)
         {
             FollowMouse();
+            if (Input.GetMouseButtonDown(1))
+            {
+                Toggle();
+            }
         }
 
     }

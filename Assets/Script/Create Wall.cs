@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class ScreenEdgeColliders : MonoBehaviour
 {
-    public PhysicMaterial wallMaterial;
+    public PhysicMaterial bounceMaterial;
 
     void Start()
     {
@@ -40,6 +40,21 @@ public class ScreenEdgeColliders : MonoBehaviour
         if (name.Contains("Right")) wall.transform.position += Vector3.right * 0.5f;
         BoxCollider col = wall.AddComponent<BoxCollider>();
         col.size = scale;
-        //col.material = wallMaterial;
+    }
+
+    public void BounceWall()
+    {
+        foreach (Collider col in GameObject.Find("ScreenWalls").GetComponentsInChildren<Collider>())
+        {
+            col.material = bounceMaterial;
+        }
+    }
+
+    public void ResetWallPhysics()
+    {
+        foreach (Collider col in GameObject.Find("ScreenWalls").GetComponentsInChildren<Collider>())
+        {
+            col.material = null;
+        }
     }
 }
