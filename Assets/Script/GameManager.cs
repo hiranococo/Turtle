@@ -18,7 +18,28 @@ public class GameManager : MonoBehaviour
         {
             Destroy(gameObject); // 销毁新创建的重复实例
         }
+    }
 
+    public void QuitGame()
+    {
+        Application.Quit();
+    }
+
+
+    void Update()
+    {
+        GainMoney();
+    }
+    
+    private float timer = 0f;
+    private void GainMoney()
+    {
+        timer += Time.deltaTime;
+        if (timer >= 60f)
+        {
+            money ++;
+            timer = 0f;
+        }
     }
 
 

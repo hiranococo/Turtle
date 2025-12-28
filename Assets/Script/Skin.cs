@@ -9,7 +9,7 @@ public class Skin : MonoBehaviour
     public Sprite icon;
     public int price;
     public GameObject turtle;
-    private Renderer renderer;
+    private Renderer rd;
     private TextMeshProUGUI money;
     private Image image;
     private bool isUnlocked = false;
@@ -25,7 +25,12 @@ public class Skin : MonoBehaviour
         money = GetComponentInChildren<TextMeshProUGUI>();
         money.text = "$" + price.ToString();
 
-        renderer = turtle.GetComponent<Renderer>();
+        rd = turtle.GetComponent<Renderer>();
+        if (price == 0)
+        {
+            isUnlocked = true;
+            upLayer.SetActive(false);
+        }
     }
 
     public void ApplySkin()
@@ -45,7 +50,7 @@ public class Skin : MonoBehaviour
         {
 
             Debug.Log("2");
-            renderer.material.mainTexture = skinTexture;
+            rd.material.mainTexture = skinTexture;
         }
         
     }

@@ -1,7 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
-using UnityEditor;
 using UnityEngine;
 
 public class TurtleTool : MonoBehaviour
@@ -26,8 +22,10 @@ private bool isHovering = false;
         isHovering = false;
     }
 
+
     void Update()
     {
+        //Debug.Log(clickedTool);
         toolCanvas.transform.position = transform.position - relativePos;
         if (!toolCanvas.activeSelf && isHovering && Input.GetMouseButtonDown(1))
         {
@@ -35,16 +33,13 @@ private bool isHovering = false;
         }
         else if (toolCanvas.activeSelf && Input.anyKeyDown)
         {
-            Invoke("OnDisable", 0.1f);
+            Invoke("OnDisable", 0.15f);
         }
     }
 
     void OnDisable()
     {
-        toolCanvas.SetActive(false);
+        if(toolCanvas.activeSelf)
+            toolCanvas.SetActive(false);
     }
-
-
-
-
 }

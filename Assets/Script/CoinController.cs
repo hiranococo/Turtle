@@ -23,6 +23,8 @@ public class CoinController : MonoBehaviour
     public void Toss()
     {
         if (!ableToToss) return;
+        if (GameManager.Instance.money < 3) return;
+        GameManager.Instance.money -= 3;
         result = 0; // reset result
         foreach (Coin c in coin)
         {
@@ -37,6 +39,7 @@ public class CoinController : MonoBehaviour
 
     void Update()
     {
+
         if(yaoIdx >= 6) // 扔完六次硬币
         {
             ableToToss = false;

@@ -5,7 +5,6 @@ using UnityEngine;
 public class Score : MonoBehaviour
 {
 
-private bool alreadyEnlarged = false;
     // Update is called once per frame
     public void Enlarge()
     {

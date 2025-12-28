@@ -11,6 +11,7 @@ public class Play : MonoBehaviour
     public Bar barScript;
     public ScreenEdgeColliders screenEdgeColliders;
     private Rigidbody rb;
+    public TurtleTool turtleTool;
 
 
     public GameObject playBar;
@@ -32,6 +33,7 @@ public class Play : MonoBehaviour
             animator.SetBool("isIdle", true);
             animator.SetBool("idleTrigger", true);
             animator.SetInteger("idleIndex",1);
+            
             //animator.SetBool("isGrounded", false);
         }
 
