@@ -32,6 +32,7 @@ public class ScreenEdgeColliders : MonoBehaviour
         wall.transform.parent = parent.transform; // set parent
         wall.transform.position = pos;            // set position
         wall.tag = name;
+        
 
         // 把墙稍微往外移一点点，避免卡住
         if (name.Contains("Top")) wall.transform.position += Vector3.up * 0.5f;

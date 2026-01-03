@@ -39,7 +39,6 @@ public class Skin : MonoBehaviour
         {
             if(GameManager.Instance.money >= price)
             {
-                Debug.Log("1");
                 GameManager.Instance.money -= price;
                 isUnlocked = true;
                 upLayer.SetActive(false);
@@ -48,11 +47,8 @@ public class Skin : MonoBehaviour
         }
         else
         {
-
-            Debug.Log("2");
             rd.material.mainTexture = skinTexture;
         }
-        
     }
 
 

@@ -11,7 +11,6 @@ public class Play : MonoBehaviour
     public Bar barScript;
     public ScreenEdgeColliders screenEdgeColliders;
     private Rigidbody rb;
-    public TurtleTool turtleTool;
 
 
     public GameObject playBar;
@@ -116,7 +115,6 @@ public CoolDownTime coolDownTime;
     
 public GameObject pointer;
 public float launchForce = 50f;
-    
     void Launch()
     {
         if (barScript.currentPointerAngle > barScript.greenMin && barScript.currentPointerAngle < barScript.greenMax)
